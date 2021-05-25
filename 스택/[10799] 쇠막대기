@@ -1,0 +1,18 @@
+pipe=input()
+temp=list()
+
+result=0
+for i in range(0,len(pipe)):
+    if pipe[i]=='(':
+        temp.append('(')
+    else:
+        if pipe[i-1]==')':
+            temp.pop()
+            result+=1
+        else:
+            temp.pop()
+            result+=len(temp)
+print(result)
+        
+  
+    

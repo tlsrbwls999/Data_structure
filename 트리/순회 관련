@@ -1,0 +1,8 @@
+#전위 순회 출력 
+
+def dfs(num,v,visited):
+    visited[v]=True
+    print(v,end=' ')
+    for i in num[v]:
+        if not visited[i]:
+            dfs(num,i,visited)

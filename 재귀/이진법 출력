@@ -1,0 +1,10 @@
+def dfs(v):
+    a=v%2
+    b=v//2
+    if b==0:
+        return print(a,end='')
+    dfs(b)
+    print(a,end='')
+
+dfs(int(input()))
+

@@ -1,0 +1,25 @@
+import sys
+sys.setrecursionlimit(1000000) 
+
+n=int(input())
+dp=[0]*(100001)
+
+dp[1]=1
+dp[2]=2
+dp[3]=4
+
+def dfs(v):
+    if dp[v]!=0:
+        return dp[v]        #이 line이 시간초과를 막는 유일한 방법이었다. 가지치기!! dfs나 재귀는 가지치기를 생각하자 
+    if v==1:
+        return 1
+    elif v==2:
+        return 2
+    elif v==3:
+        return 4
+    else:
+        dp[v]=((dfs(v-1)+dfs(v-2)+dfs(v-3))%1000)
+        return dp[v]
+    
+print(dfs(n))
+
